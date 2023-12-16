@@ -7,6 +7,7 @@ const min = document.getElementById('min');
 const sec = document.getElementById('sec');
 const circle = document.getElementById('circle');
 const image = document.getElementById('image');
+const clock = document.getElementById('clock');
 
 setInterval(()=>{
     const time = new Date();
@@ -39,6 +40,8 @@ const toggleMode = () => {
         image.style.filter = "invert(1)";
         mode.style.backgroundColor = 'white';
         mode.style.color = 'black';
+        clock.style.backgroundColor = 'white';
+        clock.style.color = 'black';
         mode.innerHTML = 'Light';
     }
     else{
@@ -54,6 +57,17 @@ const toggleMode = () => {
         image.style.filter = "none";
         mode.style.backgroundColor = 'rgb(31, 31, 31)';
         mode.style.color = 'white';
+        clock.style.backgroundColor = 'rgb(31, 31, 31)';
+        clock.style.color = 'white';
         mode.innerHTML = 'Dark';
+    }
+}
+
+const clockFace = () => {
+    if(image.getAttribute("src") == 'img/clock_roman.png'){
+        image.setAttribute("src", "img/clock.png");
+    }
+    else{
+        image.setAttribute("src", "img/clock_roman.png");
     }
 }
